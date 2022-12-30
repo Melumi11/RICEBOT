@@ -8,7 +8,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='~', intents = intents)
 
 rices = os.listdir('rice')
-ricedishess = os.listdir('ricedishes')
+ricedishes = os.listdir('ricedishes')
 
 @bot.event
 async def on_ready():
@@ -35,7 +35,7 @@ async def whatdo(message):
   brief = "I give you a rice dish."
 )
 async def ricedish(message):
-  await message.channel.send(file = discord.File(random.choice(ricedishess)))
+  await message.channel.send(file = discord.File("ricedishes/" + random.choice(ricedishes)))
 
 @bot.command(
   help = "If you want rice.",
@@ -44,5 +44,5 @@ async def ricedish(message):
 async def wantrice(message):
   await message.channel.send(file = discord.File(random.choice(rices)))
 
-bot.run(os.getenv("TOKEN"))
+bot.run(getenv("TOKEN"))
 #don't know where to hide the token on this site
