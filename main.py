@@ -13,8 +13,6 @@ ricedishes = os.listdir('ricedishes')
 @bot.event
 async def on_ready():
     print('A C T I V A T I O N N N N N')
-    #print(random.choice(rices))
-    #this works but sending the image doesn't
 
 @bot.event
 async def on_message(message):
@@ -45,4 +43,3 @@ async def wantrice(message):
   await message.channel.send(file = discord.File(random.choice(rices)))
 
 bot.run(getenv("TOKEN"))
-#don't know where to hide the token on this site
