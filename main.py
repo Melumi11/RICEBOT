@@ -42,4 +42,4 @@ async def ricedish(message):
 async def wantrice(message):
   await message.channel.send(file = discord.File(random.choice(rices)))
 
-bot.run(getenv("TOKEN"))
+bot.run(TOKEN)
