@@ -45,3 +45,4 @@ async def wantrice(message):
   await message.channel.send(file = discord.File(random.choice(rices)))
 
 bot.run(os.getenv("TOKEN"))
+#don't know where to hide the token on this site
