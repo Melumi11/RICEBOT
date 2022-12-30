@@ -7,7 +7,7 @@ on:
         - cron: "0 */6 * * *" 
 
 concurrency: # should prevent two instances of the bot from running at once
-  group: ${{ github.workflow }}-${{ github.discord.py-starter }} # can change name to your bot
+  group: ${{ github.workflow }}-${{ github.RICEBOT }} # can change name to your bot
   cancel-in-progress: true
 
 jobs:
@@ -23,8 +23,7 @@ jobs:
     - name: Install dependencies
       run: | # install whatever else you need here
         python -m pip install --upgrade pip
-        pip install discord.py==1.7.3
-        pip install discord-py-slash-command==3.0.3
+        pip install discord.py
     - name: execute py script
       env: 
           TOKEN: ${{ secrets.TOKEN }} # sets bot token
